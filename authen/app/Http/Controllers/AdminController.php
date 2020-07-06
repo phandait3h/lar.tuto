@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
-
+    //hàm khởi tạo được chạy đầu tiên rồi mới đến các hàm khác, không cần biết vị trí hàm này xếp ở đâu
     public function __construct()
     {
         $this->middleware('auth:admin')->only('index');

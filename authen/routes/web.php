@@ -43,3 +43,24 @@ Route::prefix('admin')->group(function (){
 
 
 });
+//gom nhóm cho người bán hàng
+Route::prefix('seller')->group(function () {
+    //trả về view dashboard
+    Route::get('/', 'SellerController@index')->name('seller.dashboard');
+    Route::get('/dashboard', 'SellerController@index')->name('seller.dashboard');
+
+
+    //view đăng ký
+    Route::get('register', 'SellerController@create')->name('seller.register');
+    //xử lý thông tin đăng kí
+    Route::post('register','SellerController@store')->name('seller.register.store');
+
+
+    //view đăng nhập seller
+    Route::get('login', 'Auth\Seller\LoginController@login')->name('seller.auth.login');
+    //xử lý thông tin đăng nhập
+    Route::post('login', 'Auth\Seller\LoginController@loginSeller')->name('seller.auth.loginSeller');
+
+    //đăng xuất
+    Route::post('logout', 'Auth\Seller\LoginController@logout')->name('seller.auth.logout');
+});
