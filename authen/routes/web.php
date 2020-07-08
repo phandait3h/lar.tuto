@@ -64,3 +64,26 @@ Route::prefix('seller')->group(function () {
     //đăng xuất
     Route::post('logout', 'Auth\Seller\LoginController@logout')->name('seller.auth.logout');
 });
+
+
+//gom nhóm cho bên vận chuyển
+Route::prefix('shipper')->group(function () {
+    //trả về view dashboard
+    Route::get('/', 'ShipperController@index')->name('shipper.dashboard');
+    Route::get('/dashboard', 'ShipperController@index')->name('shipper.dashboard');
+
+
+    //view đăng ký
+    Route::get('register', 'ShipperController@create')->name('shipper.register');
+    //xử lý thông tin đăng kí
+    Route::post('register','ShipperController@store')->name('shipper.register.store');
+
+
+    //view đăng nhập seller
+    Route::get('login', 'Auth\Shipper\LoginController@login')->name('shipper.auth.login');
+    //xử lý thông tin đăng nhập
+    Route::post('login', 'Auth\Shipper\LoginController@loginShipper')->name('shipper.auth.loginSeller');
+
+    //đăng xuất
+    Route::post('logout', 'Auth\Shipper\LoginController@logout')->name('shipper.auth.logout');
+});
