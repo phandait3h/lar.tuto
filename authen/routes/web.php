@@ -40,8 +40,37 @@ Route::prefix('admin')->group(function (){
     //đăng xuất
     Route::post('logout', 'Auth\Admin\LoginController@logout')->name('admin.auth.logout');
 
+    Route::get('shop/category', function (){
+        return view('admin.content.shop.category.index');
+    });
 
+    Route::get('shop/product', function (){
+        return view('admin.content.shop.product.index');
+    });
 
+    Route::get('shop/order', function (){
+        return view('admin.content.shop.order.index');
+    });
+
+    Route::get('shop/brand', function (){
+        return view('admin.content.shop.brand.index');
+    });
+
+    Route::get('shop/review', function (){
+        return view('admin.content.shop.review.index');
+    });
+
+    Route::get('shop/statistic', function (){
+        return view('admin.content.shop.statistic.index');
+    });
+
+    Route::get('shop/customer', function (){
+        return view('admin.content.shop.customer.index');
+    });
+
+    Route::get('shop/product/order', function (){
+        return view('admin.content.shop.adminorder.index');
+    });
 });
 //gom nhóm cho người bán hàng
 Route::prefix('seller')->group(function () {
