@@ -135,9 +135,9 @@
                             <i class="fa fa-angle-left pull-right"></i>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="{{ url('/admin/inbox') }}"><i class="fa fa-angle-right"></i> Inbox</a></li>
-                            <li><a href="{{ url('/admin/draf') }}"><i class="fa fa-angle-right"></i> Draf</a></li>
-                            <li><a href="{{ url('/admin/send') }}"><i class="fa fa-angle-right"></i> Send</a></li>
+                            <li><a href="{{ url('/admin/email/inbox') }}"><i class="fa fa-angle-right"></i> Inbox</a></li>
+                            <li><a href="{{ url('/admin/email/draft') }}"><i class="fa fa-angle-right"></i> Draft</a></li>
+                            <li><a href="{{ url('/admin/email/send') }}"><i class="fa fa-angle-right"></i> Send</a></li>
                         </ul>
                     </li>
                 </ul>

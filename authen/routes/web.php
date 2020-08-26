@@ -23,6 +23,12 @@ Route::get('/home', 'HomeController@index')->name('home');
 // GOM NHÓM CHO QUẢN TRỊ VIÊN
 
 Route::prefix('admin')->group(function (){
+    /*
+     * ------------------ Route Admin Authentication ---------------------------
+     * -------------------------------------------------------------------------
+     * -------------------------------------------------------------------------
+     */
+
     //trả về view dashboard
     Route::get('/', 'AdminController@index')->name('admin.dashboard');
     Route::get('/dashboard', 'AdminController@index')->name('admin.dashboard');
@@ -39,6 +45,12 @@ Route::prefix('admin')->group(function (){
 
     //đăng xuất
     Route::post('logout', 'Auth\Admin\LoginController@logout')->name('admin.auth.logout');
+
+    /*
+     * ------------------ Route Admin Shopping ---------------------------
+     * -------------------------------------------------------------------------
+     * -------------------------------------------------------------------------
+     */
 
     Route::get('shop/category', function (){
         return view('admin.content.shop.category.index');
@@ -70,6 +82,111 @@ Route::prefix('admin')->group(function (){
 
     Route::get('shop/product/order', function (){
         return view('admin.content.shop.adminorder.index');
+    });
+
+    /*
+     * ------------------ Route Admin Content ----------------------------------
+     * -------------------------------------------------------------------------
+     * -------------------------------------------------------------------------
+     */
+
+    Route::get('content/category', function (){
+        return view('admin.content.content.category.index');
+    });
+
+    Route::get('content/post', function (){
+        return view('admin.content.content.post.index');
+    });
+
+    Route::get('content/page', function (){
+        return view('admin.content.content.page.index');
+    });
+
+    Route::get('content/tag', function (){
+        return view('admin.content.content.tag.index');
+    });
+
+    /*
+     * ------------------ Route Admin Menu ----------------------------------
+     * -------------------------------------------------------------------------
+     * -------------------------------------------------------------------------
+     */
+
+    Route::get('menu', function (){
+        return view('admin.content.menu.index');
+    });
+
+    Route::get('menuitems', function (){
+        return view('admin.content.menuitem.index');
+    });
+
+    /*
+     * ------------------ Route Admin Users ----------------------------------
+     * -------------------------------------------------------------------------
+     * -------------------------------------------------------------------------
+     */
+    Route::get('users', function (){
+        return view('admin.content.users.index');
+    });
+
+    /*
+     * ------------------ Route Admin media ----------------------------------
+     * -------------------------------------------------------------------------
+     * -------------------------------------------------------------------------
+     */
+    Route::get('media', function (){
+        return view('admin.content.media.index');
+    });
+
+    /*
+     * ------------------ Route Admin config ----------------------------------
+     * -------------------------------------------------------------------------
+     * -------------------------------------------------------------------------
+     */
+    Route::get('config', function (){
+        return view('admin.content.config.index');
+    });
+
+    /*
+     * ------------------ Route Admin newletters ----------------------------------
+     * -------------------------------------------------------------------------
+     * -------------------------------------------------------------------------
+     */
+    Route::get('newletters', function (){
+        return view('admin.content.newletters.index');
+    });
+
+    /*
+     * ------------------ Route Admin banners ----------------------------------
+     * -------------------------------------------------------------------------
+     * -------------------------------------------------------------------------
+     */
+    Route::get('banners', function (){
+        return view('admin.content.banners.index');
+    });
+
+    /*
+     * ------------------ Route Admin contact ----------------------------------
+     * -------------------------------------------------------------------------
+     * -------------------------------------------------------------------------
+     */
+    Route::get('contact', function (){
+        return view('admin.content.contact.index');
+    });
+
+    /*
+     * ------------------ Route Admin Email ----------------------------------
+     * -------------------------------------------------------------------------
+     * -------------------------------------------------------------------------
+     */
+    Route::get('email/inbox', function (){
+        return view('admin.content.email.inbox.index');
+    });
+    Route::get('email/draft', function (){
+        return view('admin.content.email.draft.index');
+    });
+    Route::get('email/send', function (){
+        return view('admin.content.email.send.index');
     });
 });
 //gom nhóm cho người bán hàng
