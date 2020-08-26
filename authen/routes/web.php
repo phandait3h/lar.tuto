@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('frontend.homepages.index');
 });
 
 Auth::routes();
@@ -152,8 +152,8 @@ Route::prefix('admin')->group(function (){
      * -------------------------------------------------------------------------
      * -------------------------------------------------------------------------
      */
-    Route::get('newletters', function (){
-        return view('admin.content.newletters.index');
+    Route::get('newsletters', function (){
+        return view('admin.content.newsletters.index');
     });
 
     /*
