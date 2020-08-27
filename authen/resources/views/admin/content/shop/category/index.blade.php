@@ -21,7 +21,7 @@
                    <th>Slug</th>
                    <th>Hình ảnh</th>
                    <th>Mô tả ngắn</th>
-                   <th>Mô tả</th>
+                   <th>Action</th>
 
                </tr>
                </thead>
@@ -33,12 +33,18 @@
                    <td>{{$cat->slug}}</td>
                    <td>{{$cat->images}}</td>
                    <td>{{$cat->intro}}</td>
-                   <td>{{$cat->desc}}</td>
+                   <td>
+                       <a href="{{url('admin/shop/category/'.$cat->id.'/edit')}}" class="btn btn-warning">Sửa</a>
+                       <a href="{{url('admin/shop/category/'.$cat->id.'/delete ')}}" class="btn btn-danger">Xóa</a>
+                   </td>
+
 
                </tr>
                    @endforeach
                </tbody>
+
            </table>
+           {{ $cats->links() }}
        </div>
    </div>
 @endsection
