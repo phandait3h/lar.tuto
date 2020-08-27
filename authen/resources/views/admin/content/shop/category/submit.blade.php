@@ -9,7 +9,6 @@
     <h1>Thêm mới danh mục</h1>
 
     <div class="row">
-        <h3 class="title1">General Form :</h3>
         <div class="form-three widget-shadow">
             <form class="form-horizontal" name="category" action="{{url('admin/shop/category ')}}" method="post">
                 @csrf
