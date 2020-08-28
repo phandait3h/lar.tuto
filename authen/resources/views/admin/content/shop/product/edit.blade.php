@@ -10,6 +10,15 @@
 
     <div class="row">
         <div class="form-three widget-shadow">
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
             <form class="form-horizontal" name="product" action="{{url('admin/shop/product/'.$products->id)}}" method="post">
                 @csrf
                 <div class="form-group">
@@ -62,21 +71,21 @@
                 <div class="form-group">
                     <label for="focusedinput" class="col-sm-2 control-label">Giá niêm yết</label>
                     <div class="col-sm-8">
-                        <input type="text" name="priceCore" class="form-control1" id="focusedinput" >
+                        <input type="text" name="priceCore" value="{{$products->priceCore}}" class="form-control1" id="focusedinput" >
                     </div>
 
                 </div>
                 <div class="form-group">
                     <label for="focusedinput" class="col-sm-2 control-label">Giá bán</label>
                     <div class="col-sm-8">
-                        <input type="text" name="priceSale" class="form-control1" id="focusedinput" >
+                        <input type="text" name="priceSale" value="{{$products->priceSale}}" class="form-control1" id="focusedinput" >
                     </div>
 
                 </div>
                 <div class="form-group">
                     <label for="focusedinput" class="col-sm-2 control-label">Tồn kho</label>
                     <div class="col-sm-8">
-                        <input type="text" name="stock" class="form-control1" id="focusedinput" >
+                        <input type="text" name="stock" value="{{$products->stock}}" class="form-control1" id="focusedinput" >
                     </div>
                 </div>
 
