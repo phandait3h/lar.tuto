@@ -163,15 +163,24 @@ Route::prefix('admin')->group(function (){
      * -------------------------------------------------------------------------
      * -------------------------------------------------------------------------
      */
+    Route::get('menu', 'Admin\MenuController@index');
+    Route::get('menu/create', 'Admin\MenuController@create');
+    Route::get('menu/{id}/edit', 'Admin\MenuController@edit');
+    Route::get('menu/{id}/delete', 'Admin\MenuController@delete');
 
-    Route::get('menu', function (){
-        return view('admin.content.menu.index');
-    });
+    Route::post('menu', 'Admin\MenuController@store');
+    Route::post('menu/{id}', 'Admin\MenuController@update');
+    Route::post('menu/{id}/delete', 'Admin\MenuController@destroy');
 
-    Route::get('menuitems', function (){
-        return view('admin.content.menuitem.index');
-    });
 
+    Route::get('menuitems', 'Admin\MenuItemController@index');
+    Route::get('menuitems/create', 'Admin\MenuItemController@create');
+    Route::get('menuitems/{id}/edit', 'Admin\MenuItemController@edit');
+    Route::get('menuitems/{id}/delete', 'Admin\MenuItemController@delete');
+
+    Route::post('menuitems', 'Admin\MenuItemController@store');
+    Route::post('menuitems/{id}', 'Admin\MenuItemController@update');
+    Route::post('menuitems/{id}/delete', 'Admin\MenuItemController@destroy');
     /*
      * ------------------ Route Admin Users ----------------------------------
      * -------------------------------------------------------------------------
