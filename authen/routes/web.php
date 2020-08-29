@@ -116,7 +116,7 @@ Route::prefix('admin')->group(function (){
     Route::post('content/category/{id}/delete', 'Admin\ContentCategoryController@destroy');
 
     /*
-         * ------------------ Route Admin Post ----------------------------------
+         * ------------------ Route Admin Content Post ----------------------------------
          * -------------------------------------------------------------------------
          * -------------------------------------------------------------------------
          */
@@ -129,14 +129,34 @@ Route::prefix('admin')->group(function (){
     Route::post('content/post/{id}', 'Admin\ContentPostController@update');
     Route::post('content/post/{id}/delete', 'Admin\ContentPostController@destroy');
 
+    /*
+         * ------------------ Route Admin Content Page ----------------------------------
+         * -------------------------------------------------------------------------
+         * -------------------------------------------------------------------------
+         */
+    Route::get('content/page', 'Admin\ContentPageController@index');
+    Route::get('content/page/create', 'Admin\ContentPageController@create');
+    Route::get('content/page/{id}/edit', 'Admin\ContentPageController@edit');
+    Route::get('content/page/{id}/delete', 'Admin\ContentPageController@delete');
 
-    Route::get('content/page', function (){
-        return view('admin.content.content.page.index');
-    });
+    Route::post('content/page/', 'Admin\ContentPageController@store');
+    Route::post('content/page/{id}', 'Admin\ContentPageController@update');
+    Route::post('content/page/{id}/delete', 'Admin\ContentPageController@destroy');
 
-    Route::get('content/tag', function (){
-        return view('admin.content.content.tag.index');
-    });
+    /*
+             * ------------------ Route Admin Content Tag ----------------------------------
+             * -------------------------------------------------------------------------
+             * -------------------------------------------------------------------------
+             */
+    Route::get('content/tag', 'Admin\ContentTagController@index');
+    Route::get('content/tag/create', 'Admin\ContentTagController@create');
+    Route::get('content/tag/{id}/edit', 'Admin\ContentTagController@edit');
+    Route::get('content/tag/{id}/delete', 'Admin\ContentTagController@delete');
+
+    Route::post('content/tag/', 'Admin\ContentTagController@store');
+    Route::post('content/tag/{id}', 'Admin\ContentTagController@update');
+    Route::post('content/tag/{id}/delete', 'Admin\ContentTagController@destroy');
+
 
     /*
      * ------------------ Route Admin Menu ----------------------------------
